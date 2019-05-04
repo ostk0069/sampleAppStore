@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DEA227DA347003D19F8 /* SearchResult.swift */; };
+		82678DEE227DA6E6003D19F8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DED227DA6E6003D19F8 /* Service.swift */; };
+		82678DF1227DCDE7003D19F8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678DF0227DCDE7003D19F8 /* SDWebImage.framework */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* UIStackView+.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82678DEA227DA347003D19F8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		82678DED227DA6E6003D19F8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		82678DF0227DCDE7003D19F8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -39,12 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82678DF1227DCDE7003D19F8 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82678DEC227DA6D3003D19F8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82678DED227DA6E6003D19F8 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82678DEF227DCDE6003D19F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82678DF0227DCDE7003D19F8 /* SDWebImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82A18FC5227D8B01007BC7FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +85,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		82A18FCD227DA309007BC7FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82678DEA227DA347003D19F8 /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		82F31C7D227D73E400E17BFD = {
 			isa = PBXGroup;
 			children = (
 				82F31C88227D73E500E17BFD /* sampleAppStore */,
 				82F31C87227D73E500E17BFD /* Products */,
+				82678DEF227DCDE6003D19F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +113,8 @@
 		82F31C88227D73E500E17BFD /* sampleAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				82678DEC227DA6D3003D19F8 /* Service */,
+				82A18FCD227DA309007BC7FD /* Model */,
 				82A18FC8227D9355007BC7FD /* Extension */,
 				82A18FC5227D8B01007BC7FD /* Cell */,
 				82F31C9D227D83F400E17BFD /* ViewController */,
@@ -113,6 +147,7 @@
 				82F31C82227D73E500E17BFD /* Sources */,
 				82F31C83227D73E500E17BFD /* Frameworks */,
 				82F31C84227D73E500E17BFD /* Resources */,
+				82678DF2227DCDF6003D19F8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -169,6 +204,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		82678DF2227DCDF6003D19F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		82F31C82227D73E500E17BFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -176,8 +232,10 @@
 			files = (
 				82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */,
 				82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */,
+				82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */,
 				82F31C8C227D73E500E17BFD /* ViewController.swift in Sources */,
 				82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */,
+				82678DEE227DA6E6003D19F8 /* Service.swift in Sources */,
 				82F31C9C227D77FB00E17BFD /* BaseTabBarController.swift in Sources */,
 				82F31C9F227D844B00E17BFD /* AppsSearchController.swift in Sources */,
 				82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */,
@@ -327,6 +385,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = sampleAppStore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,6 +406,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = sampleAppStore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
