@@ -10,26 +10,19 @@ import UIKit
 
 class AppDetailController: BaseListController {
     
+    private let appId: String
+    init(appId: String) {
+        self.appId = appId
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var app: Result?
     var reviews: Reviews?
     var height: CGFloat = 280
-    
-    var appId: String! {
-        didSet {
-            Service.shared.fetchSearchResult(id: appId) { (result: SearchResult?, error) in
-                self.app = result?.results.first
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-            Service.shared.fetchReviews(id: appId) { (reviews: Reviews?, error) in
-                self.reviews = reviews
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +31,23 @@ class AppDetailController: BaseListController {
         navigationItem.largeTitleDisplayMode = .never
         collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: "PreviewCell")
         collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: "ReviewRowCell")
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        Service.shared.fetchSearchResult(id: appId) { (result: SearchResult?, error) in
+            self.app = result?.results.first
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        Service.shared.fetchReviews(id: appId) { (reviews: Reviews?, error) in
+            self.reviews = reviews
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 

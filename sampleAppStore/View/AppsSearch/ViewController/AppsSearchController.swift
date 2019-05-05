@@ -64,6 +64,10 @@ extension AppsSearchController: UISearchBarDelegate {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             Service.shared.fetchApps(searchTerm: searchText) { (res, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
                 guard let result = res else {
                     return
                 }
@@ -89,6 +93,11 @@ extension AppsSearchController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
             cell.appResult = appResults[indexPath.item]
             return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appDetailController = AppDetailController(appId: String(appResults[indexPath.item].trackId))
+        navigationController?.pushViewController(appDetailController, animated: true)
     }
 }
 
