@@ -29,7 +29,7 @@
 		8275D5A7227EDE49008A0816 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
-		82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* UIStackView+.swift */; };
+		82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */; };
 		82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31C89227D73E500E17BFD /* AppDelegate.swift */; };
 		82F31C8F227D73E500E17BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C8D227D73E500E17BFD /* Main.storyboard */; };
 		82F31C91227D73E600E17BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C90227D73E600E17BFD /* Assets.xcassets */; };
@@ -61,7 +61,7 @@
 		8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		82A18FCB227D97E8007BC7FD /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		82F31C86227D73E500E17BFD /* sampleAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F31C89227D73E500E17BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F31C8E227D73E500E17BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +112,7 @@
 		8275D597227EB07D008A0816 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8275D5A8227EE1B4008A0816 /* Helper */,
 				82F31C9B227D77FB00E17BFD /* BaseTabBarController.swift */,
 				8275D599227EB0B9008A0816 /* AppsSearch */,
 				8275D598227EB0AA008A0816 /* AppsPage */,
@@ -154,6 +155,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8275D5A8227EE1B4008A0816 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */,
+				8275D5A2227ED8CD008A0816 /* HorizontalSnappingController.swift */,
+				8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */,
+				82678DF5227E909C003D19F8 /* BaseListController.swift */,
+				8275D5A4227ED934008A0816 /* SnappingLayout.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		82A18FC5227D8B01007BC7FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,14 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				82A18FC9227D9388007BC7FD /* UIView+.swift */,
-				82A18FCB227D97E8007BC7FD /* UIStackView+.swift */,
-				82678DF5227E909C003D19F8 /* BaseListController.swift */,
 				8275D586227E9573008A0816 /* UILabel+.swift */,
 				8275D58C227E9EB0008A0816 /* UIImageView+.swift */,
 				8275D58E227E9F3D008A0816 /* UIButton+.swift */,
-				8275D5A2227ED8CD008A0816 /* HorizontalSnappingController.swift */,
-				8275D5A4227ED934008A0816 /* SnappingLayout.swift */,
-				8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */,
+				82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */,
 				8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */,
 				82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */,
 				82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */,

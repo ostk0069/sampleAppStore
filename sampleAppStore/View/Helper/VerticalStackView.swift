@@ -1,5 +1,5 @@
 //
-//  UIStackView+.swift
+//  VerticalStackView.swift
 //  sampleAppStore
 //
 //  Created by Takuma Osada on 2019/05/04.
