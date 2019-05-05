@@ -16,3 +16,11 @@ xcode version: 10.2
 - SDWebImage
   - version: 5.0.2
   - URL: https://github.com/SDWebImage/SDWebImage
+  
+## APIs
+
+- iTunes Search API
+  - https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
+
+- RSS Generator
+  - https://rss.itunes.apple.com/ja-jp
