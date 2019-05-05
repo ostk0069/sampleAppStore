@@ -25,7 +25,6 @@
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* UIStackView+.swift */; };
 		82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31C89227D73E500E17BFD /* AppDelegate.swift */; };
-		82F31C8C227D73E500E17BFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31C8B227D73E500E17BFD /* ViewController.swift */; };
 		82F31C8F227D73E500E17BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C8D227D73E500E17BFD /* Main.storyboard */; };
 		82F31C91227D73E600E17BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C90227D73E600E17BFD /* Assets.xcassets */; };
 		82F31C94227D73E600E17BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C92227D73E600E17BFD /* LaunchScreen.storyboard */; };
@@ -53,7 +52,6 @@
 		82A18FCB227D97E8007BC7FD /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		82F31C86227D73E500E17BFD /* sampleAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F31C89227D73E500E17BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82F31C8B227D73E500E17BFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82F31C8E227D73E500E17BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82F31C90227D73E600E17BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82F31C93227D73E600E17BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,10 +96,54 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		82A18FC5227D8B01007BC7FD /* Cell */ = {
+		8275D597227EB07D008A0816 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F31C9B227D77FB00E17BFD /* BaseTabBarController.swift */,
+				8275D599227EB0B9008A0816 /* AppsSearch */,
+				8275D598227EB0AA008A0816 /* AppsPage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8275D598227EB0AA008A0816 /* AppsPage */ = {
+			isa = PBXGroup;
+			children = (
+				8275D590227EA6D0008A0816 /* Header */,
+				82F31C9D227D83F400E17BFD /* ViewController */,
+				82A18FC5227D8B01007BC7FD /* Cell */,
+			);
+			path = AppsPage;
+			sourceTree = "<group>";
+		};
+		8275D599227EB0B9008A0816 /* AppsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				8275D59B227EB0F9008A0816 /* ViewController */,
+				8275D59A227EB0DF008A0816 /* Cell */,
+			);
+			path = AppsSearch;
+			sourceTree = "<group>";
+		};
+		8275D59A227EB0DF008A0816 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8275D59B227EB0F9008A0816 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82F31C9E227D844B00E17BFD /* AppsSearchController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		82A18FC5227D8B01007BC7FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				8275D584227E931D008A0816 /* AppsGroupCell.swift */,
 				8275D58A227E9D36008A0816 /* AppRowCell.swift */,
 				8275D595227EACA8008A0816 /* AppsPageHeaderCell.swift */,
@@ -150,18 +192,15 @@
 		82F31C88227D73E500E17BFD /* sampleAppStore */ = {
 			isa = PBXGroup;
 			children = (
-				8275D590227EA6D0008A0816 /* Header */,
-				82678DEC227DA6D3003D19F8 /* Service */,
-				82A18FCD227DA309007BC7FD /* Model */,
-				82A18FC8227D9355007BC7FD /* Extension */,
-				82A18FC5227D8B01007BC7FD /* Cell */,
-				82F31C9D227D83F400E17BFD /* ViewController */,
 				82F31C89227D73E500E17BFD /* AppDelegate.swift */,
-				82F31C8D227D73E500E17BFD /* Main.storyboard */,
-				82F31C8B227D73E500E17BFD /* ViewController.swift */,
 				82F31C90227D73E600E17BFD /* Assets.xcassets */,
-				82F31C92227D73E600E17BFD /* LaunchScreen.storyboard */,
+				82A18FC8227D9355007BC7FD /* Extension */,
 				82F31C95227D73E600E17BFD /* Info.plist */,
+				82F31C92227D73E600E17BFD /* LaunchScreen.storyboard */,
+				82F31C8D227D73E500E17BFD /* Main.storyboard */,
+				82A18FCD227DA309007BC7FD /* Model */,
+				82678DEC227DA6D3003D19F8 /* Service */,
+				8275D597227EB07D008A0816 /* View */,
 			);
 			path = sampleAppStore;
 			sourceTree = "<group>";
@@ -169,8 +208,6 @@
 		82F31C9D227D83F400E17BFD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				82F31C9B227D77FB00E17BFD /* BaseTabBarController.swift */,
-				82F31C9E227D844B00E17BFD /* AppsSearchController.swift */,
 				82678DF3227E8F8C003D19F8 /* AppsPageController.swift */,
 				8275D588227E985C008A0816 /* AppsHorizontalController.swift */,
 				8275D593227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift */,
@@ -277,7 +314,6 @@
 				8275D587227E9573008A0816 /* UILabel+.swift in Sources */,
 				8275D58F227E9F3D008A0816 /* UIButton+.swift in Sources */,
 				82678DF4227E8F8C003D19F8 /* AppsPageController.swift in Sources */,
-				82F31C8C227D73E500E17BFD /* ViewController.swift in Sources */,
 				82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */,
 				82678DF6227E909C003D19F8 /* UICollectionViewController+.swift in Sources */,
 				8275D58D227E9EB0008A0816 /* UIImageView+.swift in Sources */,
