@@ -37,6 +37,8 @@
 		8275D5BB227F39C9008A0816 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BA227F39C9008A0816 /* ReviewsController.swift */; };
 		8275D5BD227F3B5B008A0816 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BC227F3B5B008A0816 /* ReviewCell.swift */; };
 		8275D5BF227F3FF2008A0816 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BE227F3FF2008A0816 /* Reviews.swift */; };
+		8275D5C3227F5220008A0816 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5C2227F5220008A0816 /* TodayController.swift */; };
+		8275D5C6227F52A1008A0816 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5C5227F52A1008A0816 /* TodayCell.swift */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */; };
@@ -79,6 +81,8 @@
 		8275D5BA227F39C9008A0816 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		8275D5BC227F3B5B008A0816 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		8275D5BE227F3FF2008A0816 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		8275D5C2227F5220008A0816 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
+		8275D5C5227F52A1008A0816 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		8275D597227EB07D008A0816 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8275D5C1227F520A008A0816 /* Today */,
 				8275D5A9227EE76E008A0816 /* Detail */,
 				8275D5A8227EE1B4008A0816 /* Helper */,
 				82F31C9B227D77FB00E17BFD /* BaseTabBarController.swift */,
@@ -217,6 +222,23 @@
 				8275D5BA227F39C9008A0816 /* ReviewsController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8275D5C1227F520A008A0816 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				8275D5C4227F5292008A0816 /* Cell */,
+				8275D5C2227F5220008A0816 /* TodayController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		8275D5C4227F5292008A0816 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8275D5C5227F52A1008A0816 /* TodayCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		82A18FC5227D8B01007BC7FD /* Cell */ = {
@@ -405,6 +427,7 @@
 				82678DF6227E909C003D19F8 /* BaseListController.swift in Sources */,
 				8275D58D227E9EB0008A0816 /* UIImageView+.swift in Sources */,
 				8275D59D227EB605008A0816 /* AppFeed.swift in Sources */,
+				8275D5C3227F5220008A0816 /* TodayController.swift in Sources */,
 				8275D5B7227F322F008A0816 /* ScreenshotCell.swift in Sources */,
 				8275D5A7227EDE49008A0816 /* BetterSnappingLayout.swift in Sources */,
 				8275D594227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift in Sources */,
@@ -413,6 +436,7 @@
 				82678DEE227DA6E6003D19F8 /* Service.swift in Sources */,
 				8275D596227EACA8008A0816 /* AppsPageHeaderCell.swift in Sources */,
 				8275D5BD227F3B5B008A0816 /* ReviewCell.swift in Sources */,
+				8275D5C6227F52A1008A0816 /* TodayCell.swift in Sources */,
 				8275D5AE227EEB49008A0816 /* AppDetailCell.swift in Sources */,
 				82F31C9C227D77FB00E17BFD /* BaseTabBarController.swift in Sources */,
 				8275D5B9227F3778008A0816 /* ReviewRowCell.swift in Sources */,
