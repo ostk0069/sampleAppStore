@@ -36,4 +36,42 @@ class Service {
             }
             }.resume()
     }
+    
+    func fetchGames(completion: @escaping (AppGroup?, Error?) -> ()) {
+        let urlString: String = "https://rss.itunes.apple.com/api/v1/jp/ios-apps/new-games-we-love/all/50/explicit.json"
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchTopGrossing(completion: @escaping (AppGroup?, Error?) -> ()) {
+        let urlString: String = "https://rss.itunes.apple.com/api/v1/jp/ios-apps/top-grossing/all/50/explicit.json"
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchAppsWeLove(completion: @escaping (AppGroup?, Error?) -> ()) {
+        let urlString: String = "https://rss.itunes.apple.com/api/v1/jp/ios-apps/new-apps-we-love/all/50/explicit.json"
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchAppGroup(urlString: String, completion: @escaping (AppGroup?, Error?) -> Void) {
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                let appGroup = try JSONDecoder().decode(AppGroup.self, from: data!)
+                completion(appGroup, nil)
+            } catch {
+                completion(nil, error)
+                print("failed to decode:", error)
+            }
+            }.resume()
+    }
 }
