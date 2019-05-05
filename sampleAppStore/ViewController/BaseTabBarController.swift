@@ -8,11 +8,16 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+final class BaseTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [
+            createNavController(
+                viewController: AppsController(),
+                title: "Apps",
+                imageName: "apps"
+            ),
             createNavController(
                 viewController: AppsSearchController(),
                 title: "Search",
@@ -22,11 +27,6 @@ class BaseTabBarController: UITabBarController {
                 viewController: UIViewController(),
                 title: "Today",
                 imageName: "today_icon"
-            ),
-            createNavController(
-                viewController: UIViewController(),
-                title: "Apps",
-                imageName: "apps"
             )
         ]
     }
