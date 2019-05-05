@@ -12,9 +12,21 @@ class ReviewCell: UICollectionViewCell {
     
     let titleLabel = UILabel(text: "Review Title", font: .boldSystemFont(ofSize: 18))
     let autherLabel = UILabel(text: "author", font: .systemFont(ofSize: 16))
-    let starsLable = UILabel(text: "star", font: .systemFont(ofSize: 20))
     
-    let bodyLabel = UILabel(text: "body", font: .systemFont(ofSize: 16), numberOfLines: 0)
+    let starStackView: UIStackView = {
+        var arragedSubviews = [UIView]()
+        (0..<5).forEach({ (_) in
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "star"))
+            imageView.constrainWidth(constant: 24)
+            imageView.constrainHeight(constant: 24)
+            arragedSubviews.append(imageView)
+        })
+        arragedSubviews.append(UIView())
+        let stackView = UIStackView(arrangedSubviews: arragedSubviews)
+        return stackView
+    }()
+    
+    let bodyLabel = UILabel(text: "body", font: .systemFont(ofSize: 18), numberOfLines: 5)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,13 +39,13 @@ class ReviewCell: UICollectionViewCell {
                 autherLabel
                 ], customSpacing: 8
             ),
-            starsLable,
+            starStackView,
             bodyLabel
             ], spacing: 12)
         titleLabel.setContentCompressionResistancePriority(.init(0), for: .horizontal)
         autherLabel.textAlignment = .right
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 12, left: 12, bottom: 12, right: 12))
+        stackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 20, left: 20, bottom: 0, right: 20))
     }
     
     required init?(coder aDecoder: NSCoder) {

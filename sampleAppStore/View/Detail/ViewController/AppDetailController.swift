@@ -75,12 +75,16 @@ extension AppDetailController: UICollectionViewDelegateFlowLayout {
         } else if indexPath.item == 1 {
             height = 500
         } else {
-            height = 240
+            height = 260
         }
         return .init(width: view.frame.width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 0, bottom: 16, right: 0)
     }
 }
