@@ -11,13 +11,11 @@ import UIKit
 class AppsPageHeaderCell: UICollectionViewCell {
     
     let companyLabel = UILabel(text: "FaceBook .inc", font: .boldSystemFont(ofSize: 12))
-    let titleLabel = UILabel(text: "keeping up with friends is faster than ever", font: .systemFont(ofSize: 30))
+    let titleLabel = UILabel(text: "keeping up with friends is faster than ever", font: .systemFont(ofSize: 26))
     let imageView = UIImageView(cornerRadius: 8)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        imageView.backgroundColor = .red
         
         companyLabel.textColor = .blue
         titleLabel.numberOfLines = 2

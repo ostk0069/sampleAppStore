@@ -11,12 +11,16 @@ import UIKit
 class AppsPageController: BaseListController {
     
     var groups = [AppGroup]()
+    var socialApps =  [SocialApp]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: "AppsGroupCell")
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "AppsPageHeader")
         fetchData()
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.fillSuperview()
     }
     
     private func fetchData() {
@@ -58,7 +62,21 @@ class AppsPageController: BaseListController {
             group3 = appGroup
         }
         
+        dispatchGroup.enter()
+        Service.shared.fetchSocialApps { (apps, error) in
+            dispatchGroup.leave()
+            if let error = error {
+                print("failed to fetch social app from LBTA:", error)
+                return
+            }
+            guard let apps = apps else {
+                return
+            }
+            self.socialApps = apps
+        }
+        
         dispatchGroup.notify(queue: .main) {
+            self.activityIndicatorView.stopAnimating()
             if let group = group1 {
                 self.groups.append(group)
             }
@@ -69,10 +87,17 @@ class AppsPageController: BaseListController {
             if let group = group3 {
                 self.groups.append(group)
             }
-            
             self.collectionView.reloadData()
         }
     }
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        indicatorView.color = .black
+        indicatorView.startAnimating()
+        indicatorView.hidesWhenStopped = true
+        return indicatorView
+    }()
 }
 
 extension AppsPageController {
@@ -92,6 +117,8 @@ extension AppsPageController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AppsPageHeader", for: indexPath) as! AppsPageHeader
+        header.appsPageHeaderHorizontalController.socialApps = socialApps
+        header.appsPageHeaderHorizontalController.collectionView.reloadData()
         return header
     }
 }

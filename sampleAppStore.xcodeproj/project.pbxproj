@@ -22,6 +22,7 @@
 		8275D594227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D593227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift */; };
 		8275D596227EACA8008A0816 /* AppsPageHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D595227EACA8008A0816 /* AppsPageHeaderCell.swift */; };
 		8275D59D227EB605008A0816 /* AppFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D59C227EB605008A0816 /* AppFeed.swift */; };
+		8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D59E227EC7BB008A0816 /* SocialApp.swift */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* UIStackView+.swift */; };
@@ -49,6 +50,7 @@
 		8275D593227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		8275D595227EACA8008A0816 /* AppsPageHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeaderCell.swift; sourceTree = "<group>"; };
 		8275D59C227EB605008A0816 /* AppFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeed.swift; sourceTree = "<group>"; };
+		8275D59E227EC7BB008A0816 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				82678DEA227DA347003D19F8 /* SearchResult.swift */,
 				8275D59C227EB605008A0816 /* AppFeed.swift */,
+				8275D59E227EC7BB008A0816 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */,
+				8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */,
 				82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */,
 				82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */,
 				8275D587227E9573008A0816 /* UILabel+.swift in Sources */,
