@@ -8,17 +8,14 @@
 
 import UIKit
 
-class AppsPageHeaderHorizontalController: BaseListController {
+class AppsPageHeaderHorizontalController: HorizontalSnappingController {
     
     var socialApps = [SocialApp]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(AppsPageHeaderCell.self, forCellWithReuseIdentifier: "AppsPageHeaderCell")
-        
-        if let layout  = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 
@@ -42,9 +39,5 @@ extension AppsPageHeaderHorizontalController: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 48, height: view.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }

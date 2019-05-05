@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppsHorizontalController: BaseListController {
+class AppsHorizontalController: HorizontalSnappingController {
     
     private let topBottomPadding: CGFloat = 16
     private let lineSpacing: CGFloat = 10
@@ -18,10 +18,10 @@ class AppsHorizontalController: BaseListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: "AppRowCell")
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
+//        this does not work because of layout
+//        collectionView.isPagingEnabled = true
     }
 }
 
@@ -59,7 +59,7 @@ extension AppsHorizontalController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
+        return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
         
     }
 }

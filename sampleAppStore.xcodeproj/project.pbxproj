@@ -11,7 +11,7 @@
 		82678DEE227DA6E6003D19F8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DED227DA6E6003D19F8 /* Service.swift */; };
 		82678DF1227DCDE7003D19F8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678DF0227DCDE7003D19F8 /* SDWebImage.framework */; };
 		82678DF4227E8F8C003D19F8 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DF3227E8F8C003D19F8 /* AppsPageController.swift */; };
-		82678DF6227E909C003D19F8 /* UICollectionViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DF5227E909C003D19F8 /* UICollectionViewController+.swift */; };
+		82678DF6227E909C003D19F8 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DF5227E909C003D19F8 /* BaseListController.swift */; };
 		8275D585227E931D008A0816 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D584227E931D008A0816 /* AppsGroupCell.swift */; };
 		8275D587227E9573008A0816 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D586227E9573008A0816 /* UILabel+.swift */; };
 		8275D589227E985C008A0816 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D588227E985C008A0816 /* AppsHorizontalController.swift */; };
@@ -24,6 +24,9 @@
 		8275D59D227EB605008A0816 /* AppFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D59C227EB605008A0816 /* AppFeed.swift */; };
 		8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D59E227EC7BB008A0816 /* SocialApp.swift */; };
 		8275D5A1227ED64F008A0816 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5A0227ED64F008A0816 /* APIClient.swift */; };
+		8275D5A3227ED8CD008A0816 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5A2227ED8CD008A0816 /* HorizontalSnappingController.swift */; };
+		8275D5A5227ED934008A0816 /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5A4227ED934008A0816 /* SnappingLayout.swift */; };
+		8275D5A7227EDE49008A0816 /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* UIStackView+.swift */; };
@@ -40,7 +43,7 @@
 		82678DED227DA6E6003D19F8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		82678DF0227DCDE7003D19F8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		82678DF3227E8F8C003D19F8 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
-		82678DF5227E909C003D19F8 /* UICollectionViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+.swift"; sourceTree = "<group>"; };
+		82678DF5227E909C003D19F8 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		8275D584227E931D008A0816 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		8275D586227E9573008A0816 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		8275D588227E985C008A0816 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		8275D59C227EB605008A0816 /* AppFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeed.swift; sourceTree = "<group>"; };
 		8275D59E227EC7BB008A0816 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		8275D5A0227ED64F008A0816 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8275D5A2227ED8CD008A0816 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
+		8275D5A4227ED934008A0816 /* SnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
+		8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -163,10 +169,13 @@
 			children = (
 				82A18FC9227D9388007BC7FD /* UIView+.swift */,
 				82A18FCB227D97E8007BC7FD /* UIStackView+.swift */,
-				82678DF5227E909C003D19F8 /* UICollectionViewController+.swift */,
+				82678DF5227E909C003D19F8 /* BaseListController.swift */,
 				8275D586227E9573008A0816 /* UILabel+.swift */,
 				8275D58C227E9EB0008A0816 /* UIImageView+.swift */,
 				8275D58E227E9F3D008A0816 /* UIButton+.swift */,
+				8275D5A2227ED8CD008A0816 /* HorizontalSnappingController.swift */,
+				8275D5A4227ED934008A0816 /* SnappingLayout.swift */,
+				8275D5A6227EDE49008A0816 /* BetterSnappingLayout.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,10 +335,12 @@
 				8275D58F227E9F3D008A0816 /* UIButton+.swift in Sources */,
 				82678DF4227E8F8C003D19F8 /* AppsPageController.swift in Sources */,
 				82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */,
-				82678DF6227E909C003D19F8 /* UICollectionViewController+.swift in Sources */,
+				82678DF6227E909C003D19F8 /* BaseListController.swift in Sources */,
 				8275D58D227E9EB0008A0816 /* UIImageView+.swift in Sources */,
 				8275D59D227EB605008A0816 /* AppFeed.swift in Sources */,
+				8275D5A7227EDE49008A0816 /* BetterSnappingLayout.swift in Sources */,
 				8275D594227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift in Sources */,
+				8275D5A5227ED934008A0816 /* SnappingLayout.swift in Sources */,
 				8275D585227E931D008A0816 /* AppsGroupCell.swift in Sources */,
 				82678DEE227DA6E6003D19F8 /* Service.swift in Sources */,
 				8275D596227EACA8008A0816 /* AppsPageHeaderCell.swift in Sources */,
@@ -337,6 +348,7 @@
 				82F31C9F227D844B00E17BFD /* AppsSearchController.swift in Sources */,
 				82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */,
 				8275D592227EA6E8008A0816 /* AppsPageHeader.swift in Sources */,
+				8275D5A3227ED8CD008A0816 /* HorizontalSnappingController.swift in Sources */,
 				8275D589227E985C008A0816 /* AppsHorizontalController.swift in Sources */,
 				8275D58B227E9D36008A0816 /* AppRowCell.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  UICollectionViewController+.swift
+//  BaseListController.swift
 //  sampleAppStore
 //
 //  Created by Takuma Osada on 2019/05/05.
