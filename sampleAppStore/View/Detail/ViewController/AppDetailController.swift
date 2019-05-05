@@ -11,14 +11,19 @@ import UIKit
 class AppDetailController: BaseListController {
     
     var app: Result?
+    var reviews: Reviews?
     var height: CGFloat = 280
     
     var appId: String! {
         didSet {
             Service.shared.fetchSearchResult(id: appId) { (result: SearchResult?, error) in
-                let app = result?.results.first
-                self.app = app
-                
+                self.app = result?.results.first
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            Service.shared.fetchReviews(id: appId) { (reviews: Reviews?, error) in
+                self.reviews = reviews
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -52,6 +57,7 @@ extension AppDetailController {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewRowCell", for: indexPath) as! ReviewRowCell
+            cell.reviewsController.reviews = self.reviews
             return cell
         }
     }

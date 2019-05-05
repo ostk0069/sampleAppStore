@@ -36,6 +36,7 @@
 		8275D5B9227F3778008A0816 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5B8227F3778008A0816 /* ReviewRowCell.swift */; };
 		8275D5BB227F39C9008A0816 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BA227F39C9008A0816 /* ReviewsController.swift */; };
 		8275D5BD227F3B5B008A0816 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BC227F3B5B008A0816 /* ReviewCell.swift */; };
+		8275D5BF227F3FF2008A0816 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275D5BE227F3FF2008A0816 /* Reviews.swift */; };
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */; };
@@ -77,6 +78,7 @@
 		8275D5B8227F3778008A0816 /* ReviewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
 		8275D5BA227F39C9008A0816 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		8275D5BC227F3B5B008A0816 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		8275D5BE227F3FF2008A0816 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				82678DEA227DA347003D19F8 /* SearchResult.swift */,
 				8275D59C227EB605008A0816 /* AppFeed.swift */,
 				8275D59E227EC7BB008A0816 /* SocialApp.swift */,
+				8275D5BE227F3FF2008A0816 /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */,
 				8275D5B2227F2EEF008A0816 /* PreviewCell.swift in Sources */,
 				82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */,
+				8275D5BF227F3FF2008A0816 /* Reviews.swift in Sources */,
 				82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */,
 				8275D587227E9573008A0816 /* UILabel+.swift in Sources */,
 				8275D5A1227ED64F008A0816 /* APIClient.swift in Sources */,

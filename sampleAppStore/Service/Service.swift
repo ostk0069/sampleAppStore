@@ -41,5 +41,10 @@ class Service {
         let urlString: String = "https://itunes.apple.com/lookup?id=\(id)"
         APIClient.shared.fetchGenerticJsonData(urlString: urlString, completion: completion)
     }
+    
+    func fetchReviews(id: String, completion: @escaping (Reviews?, Error?) -> Void) {
+        let urlString: String = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(id)/sortby=mostrecent/json?l=en&cc=us"
+        APIClient.shared.fetchGenerticJsonData(urlString: urlString, completion: completion)
+    }
 }
 
