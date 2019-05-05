@@ -34,7 +34,7 @@ class SearchResultCell: UICollectionViewCell {
         
         let infoTopStackView = UIStackView(arrangedSubviews: [
             appIconImageView,
-            VerticalStackView(arrangedSubViews: [nameLabel, categoryLabel, ratingsLabel]),
+            VerticalStackView(arrangedSubviews: [nameLabel, categoryLabel, ratingsLabel]),
             getButton
             ]
         )
@@ -45,7 +45,7 @@ class SearchResultCell: UICollectionViewCell {
         screenShotStackView.spacing = 12
         screenShotStackView.distribution = .fillEqually
         
-        let overAllStackView = VerticalStackView(arrangedSubViews: [infoTopStackView, screenShotStackView], spacing: 16)
+        let overAllStackView = VerticalStackView(arrangedSubviews: [infoTopStackView, screenShotStackView], spacing: 16)
         
         addSubview(overAllStackView)
         overAllStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))

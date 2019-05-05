@@ -24,7 +24,7 @@ class AppRowCell: UICollectionViewCell {
         
         let stackView = UIStackView(arrangedSubviews: [
             imageView,
-            VerticalStackView(arrangedSubViews: [nameLabel, companyLabel], spacing: 2),
+            VerticalStackView(arrangedSubviews: [nameLabel, companyLabel], spacing: 2),
             getButton
             ]
         )
