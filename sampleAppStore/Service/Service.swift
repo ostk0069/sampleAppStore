@@ -36,5 +36,10 @@ class Service {
         let urlString: String = "https://api.letsbuildthatapp.com/appstore/social"
         APIClient.shared.fetchGenerticJsonData(urlString: urlString, completion: completion)
     }
+    
+    func fetchSearchResult(id: String, completion: @escaping (SearchResult?, Error?) -> Void) {
+        let urlString: String = "https://itunes.apple.com/lookup?id=\(id)"
+        APIClient.shared.fetchGenerticJsonData(urlString: urlString, completion: completion)
+    }
 }
 

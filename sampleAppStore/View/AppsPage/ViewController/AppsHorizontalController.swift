@@ -14,6 +14,7 @@ class AppsHorizontalController: HorizontalSnappingController {
     private let lineSpacing: CGFloat = 10
     
     var appGroup: AppGroup?
+    var didSelectHandler: ((FeedResult) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,13 @@ extension AppsHorizontalController {
         }
         cell.imageView.sd_setImage(with: URL(string: urlString))
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let app = appGroup?.feed.results[indexPath.item] else {
+            return
+        }
+        didSelectHandler?(app)
     }
 }
 
