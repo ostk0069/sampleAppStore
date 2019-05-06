@@ -16,7 +16,7 @@ class AppRowCell: UICollectionViewCell {
         imageView.constrainWidth(constant: 64)
         imageView.constrainHeight(constant: 64)
         
-        getButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        getButton.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9390758872, green: 0.9392114282, blue: 0.970784843, alpha: 1))
         getButton.constrainHeight(constant: 32)
         getButton.constrainWidth(constant: 80)
         getButton.layer.cornerRadius = 32 / 2
