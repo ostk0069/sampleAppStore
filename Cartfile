@@ -1,1 +1,2 @@
 github "SDWebImage/SDWebImage"
+github "takumaosada/Instantiate" "update/swift5"

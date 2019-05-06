@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82655120227FC6A300E5623F /* Instantiate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265511F227FC6A300E5623F /* Instantiate.framework */; };
+		82655122227FC6C800E5623F /* InstantiateStandard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82655121227FC6C800E5623F /* InstantiateStandard.framework */; };
 		82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DEA227DA347003D19F8 /* SearchResult.swift */; };
 		82678DEE227DA6E6003D19F8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DED227DA6E6003D19F8 /* Service.swift */; };
 		82678DF1227DCDE7003D19F8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678DF0227DCDE7003D19F8 /* SDWebImage.framework */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8265511F227FC6A300E5623F /* Instantiate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instantiate.framework; path = Carthage/Build/iOS/Instantiate.framework; sourceTree = "<group>"; };
+		82655121227FC6C800E5623F /* InstantiateStandard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstantiateStandard.framework; path = Carthage/Build/iOS/InstantiateStandard.framework; sourceTree = "<group>"; };
 		82678DEA227DA347003D19F8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		82678DED227DA6E6003D19F8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		82678DF0227DCDE7003D19F8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82655122227FC6C800E5623F /* InstantiateStandard.framework in Frameworks */,
+				82655120227FC6A300E5623F /* Instantiate.framework in Frameworks */,
 				82678DF1227DCDE7003D19F8 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +126,8 @@
 		82678DEF227DCDE6003D19F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82655121227FC6C800E5623F /* InstantiateStandard.framework */,
+				8265511F227FC6A300E5623F /* Instantiate.framework */,
 				82678DF0227DCDE7003D19F8 /* SDWebImage.framework */,
 			);
 			name = Frameworks;
@@ -394,6 +402,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Instantiate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/InstantiateStandard.framework",
 			);
 			outputFileListPaths = (
 			);
