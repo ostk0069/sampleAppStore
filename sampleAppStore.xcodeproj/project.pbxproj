@@ -52,6 +52,9 @@
 		82F31C9F227D844B00E17BFD /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31C9E227D844B00E17BFD /* AppsSearchController.swift */; };
 		82FEE11F22809BFA00D5F6E4 /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FEE11E22809BFA00D5F6E4 /* AppFullscreenController.swift */; };
 		82FEE12122809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FEE12022809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift */; };
+		82FEE1242280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FEE1232280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift */; };
+		82FEE1262280B69400D5F6E4 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FEE1252280B69400D5F6E4 /* TodayItem.swift */; };
+		82FEE1282280BB4200D5F6E4 /* ItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FEE1272280BB4200D5F6E4 /* ItemSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		82F31C9E227D844B00E17BFD /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		82FEE11E22809BFA00D5F6E4 /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		82FEE12022809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
+		82FEE1232280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		82FEE1252280B69400D5F6E4 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
+		82FEE1272280BB4200D5F6E4 /* ItemSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +247,7 @@
 			children = (
 				82FEE1222280A35000D5F6E4 /* ViewController */,
 				8275D5C4227F5292008A0816 /* Cell */,
+				82FEE1272280BB4200D5F6E4 /* ItemSection.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 			children = (
 				8275D5C5227F52A1008A0816 /* TodayCell.swift */,
 				82FEE12022809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift */,
+				82FEE1232280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 				8275D59C227EB605008A0816 /* AppFeed.swift */,
 				8275D59E227EC7BB008A0816 /* SocialApp.swift */,
 				8275D5BE227F3FF2008A0816 /* Reviews.swift */,
+				82FEE1252280B69400D5F6E4 /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +448,7 @@
 				82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */,
 				8275D59F227EC7BB008A0816 /* SocialApp.swift in Sources */,
 				8275D5B2227F2EEF008A0816 /* PreviewCell.swift in Sources */,
+				82FEE1242280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift in Sources */,
 				82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */,
 				8275D5BF227F3FF2008A0816 /* Reviews.swift in Sources */,
 				82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */,
@@ -465,10 +475,12 @@
 				8275D5AE227EEB49008A0816 /* AppDetailCell.swift in Sources */,
 				82F31C9C227D77FB00E17BFD /* BaseTabBarController.swift in Sources */,
 				8275D5B9227F3778008A0816 /* ReviewRowCell.swift in Sources */,
+				82FEE1282280BB4200D5F6E4 /* ItemSection.swift in Sources */,
 				82F31C9F227D844B00E17BFD /* AppsSearchController.swift in Sources */,
 				82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */,
 				8275D592227EA6E8008A0816 /* AppsPageHeader.swift in Sources */,
 				8275D5A3227ED8CD008A0816 /* HorizontalSnappingController.swift in Sources */,
+				82FEE1262280B69400D5F6E4 /* TodayItem.swift in Sources */,
 				8275D589227E985C008A0816 /* AppsHorizontalController.swift in Sources */,
 				8275D5B5227F30A0008A0816 /* PreviewScreenshotsController.swift in Sources */,
 				8275D58B227E9D36008A0816 /* AppRowCell.swift in Sources */,
