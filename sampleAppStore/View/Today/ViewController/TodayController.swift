@@ -14,8 +14,17 @@ class TodayController: BaseListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: "TodayCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     var startingFrame: CGRect?
@@ -40,7 +49,6 @@ class TodayController: BaseListController {
                 guard let startingFrame = self.startingFrame else {
                     return
                 }
-                
                 self.topConstraint?.constant = startingFrame.origin.y
                 self.leadingConstraint?.constant = startingFrame.origin.x
                 self.widthConstraint?.constant = startingFrame.width
@@ -48,6 +56,13 @@ class TodayController: BaseListController {
                 self.view.layoutIfNeeded()
                 
                 self.tabBarController?.tabBar.transform = .identity
+                
+                guard let cell = self.appFullscreenController?.tableView.cellForRow(at: [0, 0]) as? AppFullscreenHeaderCell else {
+                    return
+                    
+                }
+                cell.todayCell.topConstraint?.constant = 24
+                cell.layoutIfNeeded()
         }, completion: { _ in
             self.appFullscreenController?.view.removeFromSuperview()
             self.appFullscreenController?.removeFromParent()
@@ -64,7 +79,7 @@ extension TodayController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCell", for: indexPath) as! TodayCell
-        cell.todayItem = items[indexPath.row]
+        cell.todayItem = items[indexPath.item]
         return cell
     }
     
@@ -75,8 +90,8 @@ extension TodayController {
         appFullscreenController.dismissHandler = {
             self.handleRemoveRedView()
         }
-        
-        view.addSubview(appFullscreenController.view)
+        let fullscreenView = appFullscreenController.view!
+        view.addSubview(fullscreenView)
         addChild(appFullscreenController)
         
         self.appFullscreenController = appFullscreenController
@@ -89,19 +104,19 @@ extension TodayController {
             return
         }
         self.startingFrame = startingFrame
-        appFullscreenController.view.frame = startingFrame
+        fullscreenView.frame = startingFrame
         
-        appFullscreenController.view.translatesAutoresizingMaskIntoConstraints = false
+        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
         
-        topConstraint = appFullscreenController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
-        leadingConstraint = appFullscreenController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
-        widthConstraint = appFullscreenController.view.widthAnchor.constraint(equalToConstant: startingFrame.width)
-        heightConstraint = appFullscreenController.view.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        topConstraint = fullscreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
+        leadingConstraint = fullscreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
+        widthConstraint = fullscreenView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstraint = fullscreenView.heightAnchor.constraint(equalToConstant: startingFrame.height)
         
         [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach({$0?.isActive = true})
         self.view.layoutIfNeeded()
         
-        appFullscreenController.view.layer.cornerRadius = 16
+        fullscreenView.layer.cornerRadius = 16
         
         UIView.animate(withDuration: 0.7,
                        delay: 0,
@@ -119,7 +134,7 @@ extension TodayController {
                         guard let cell = self.appFullscreenController?.tableView.cellForRow(at: [0,0]) as? AppFullscreenHeaderCell else {
                             return
                         }
-                        cell.todayCell.topConstraint?.constant = 24
+                        cell.todayCell.topConstraint?.constant = 48
                         cell.layoutIfNeeded()
         }, completion: nil)
     }

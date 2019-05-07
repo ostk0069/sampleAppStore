@@ -12,6 +12,8 @@ import InstantiateStandard
 
 class TodayCell: UICollectionViewCell {
     
+    var topConstraint: NSLayoutConstraint?
+    
     var todayItem: TodayItem! {
         didSet {
             categoryLabel.text = todayItem.category
@@ -21,16 +23,10 @@ class TodayCell: UICollectionViewCell {
             backgroundColor = todayItem.backgroundColor
         }
     }
-    
-    var topConstraint: NSLayoutConstraint?
-    
     let categoryLabel = UILabel(text: "LIFE HACK", font: .boldSystemFont(ofSize: 20))
     let titleLabel = UILabel(text: "Utilizing your time", font: .boldSystemFont(ofSize: 28))
-    
     let imageView = UIImageView(image: #imageLiteral(resourceName: "garden"))
-    
     let descriptionLabel = UILabel(text: "All the tools and apps you need to intelligently organize your life the right way.", font: .systemFont(ofSize: 16), numberOfLines: 3)
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,8 +46,14 @@ class TodayCell: UICollectionViewCell {
             descriptionLabel
             ], spacing: 8)
         addSubview(stackView)
+        
         stackView.anchor(
-            top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+            top: nil,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
+            padding: .init(top: 0, left: 24, bottom: 24, right: 24)
+        )
         self.topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
         self.topConstraint?.isActive = true
     }
