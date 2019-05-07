@@ -14,7 +14,7 @@ class AppsPageHeaderHorizontalController: HorizontalSnappingController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(AppsPageHeaderCell.self, forCellWithReuseIdentifier: "AppsPageHeaderCell")
+        collectionView.register(type: AppsPageHeaderCell.self)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
@@ -26,7 +26,7 @@ extension AppsPageHeaderHorizontalController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppsPageHeaderCell", for: indexPath) as! AppsPageHeaderCell
+        let cell = AppsPageHeaderCell.dequeue(from: collectionView, for: indexPath)
         let app = socialApps[indexPath.item]
         cell.companyLabel.text = app.name
         cell.titleLabel.text = app.tagline

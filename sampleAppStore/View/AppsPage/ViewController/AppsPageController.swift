@@ -15,7 +15,7 @@ class AppsPageController: BaseListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: "AppsGroupCell")
+        collectionView.register(type: AppsGroupCell.self)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "AppsPageHeader")
         fetchData()
         
@@ -107,7 +107,7 @@ extension AppsPageController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppsGroupCell", for: indexPath) as! AppsGroupCell
+        let cell = AppsGroupCell.dequeue(from: collectionView, for: indexPath)
         let appGroup = groups[indexPath.item]
         cell.titleLabel.text = appGroup.feed.title
         cell.horizontalController.appGroup = appGroup

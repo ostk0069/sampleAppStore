@@ -18,7 +18,7 @@ class PreviewScreenshotsController: HorizontalSnappingController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: "ScreenshotCell")
+        collectionView.register(type: ScreenshotCell.self)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
@@ -33,7 +33,7 @@ extension PreviewScreenshotsController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotCell", for: indexPath) as! ScreenshotCell
+        let cell = ScreenshotCell.dequeue(from: collectionView, for: indexPath)
         guard let screenShotURL = self.app?.screenshotUrls[indexPath.item] else {
             return ScreenshotCell()
         }

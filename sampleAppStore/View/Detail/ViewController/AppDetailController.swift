@@ -26,12 +26,10 @@ class AppDetailController: BaseListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: "AppDetailCell")
+        collectionView.register(type: AppDetailCell.self)
+        collectionView.register(type: PreviewCell.self)
+        collectionView.register(type: ReviewRowCell.self)
         navigationItem.largeTitleDisplayMode = .never
-        collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: "PreviewCell")
-        collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: "ReviewRowCell")
-        
         fetchData()
     }
     
@@ -58,15 +56,15 @@ extension AppDetailController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailCell", for: indexPath) as! AppDetailCell
+            let cell = AppDetailCell.dequeue(from: collectionView, for: indexPath)
             cell.app = app
             return cell
         } else if indexPath.item == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
+            let cell = PreviewCell.dequeue(from: collectionView, for: indexPath)
             cell.horizontalController.app = self.app
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewRowCell", for: indexPath) as! ReviewRowCell
+            let cell = ReviewRowCell.dequeue(from: collectionView, for: indexPath)
             cell.reviewsController.reviews = self.reviews
             return cell
         }

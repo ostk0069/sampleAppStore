@@ -14,7 +14,7 @@ class TodayController: BaseListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: "TodayCell")
+        collectionView.register(type: TodayCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +78,7 @@ extension TodayController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCell", for: indexPath) as! TodayCell
+        let cell = TodayCell.dequeue(from: collectionView, for: indexPath)
         cell.todayItem = items[indexPath.item]
         return cell
     }

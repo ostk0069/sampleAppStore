@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class AppsGroupCell: UICollectionViewCell {
     
@@ -27,4 +29,7 @@ class AppsGroupCell: UICollectionViewCell {
     let titleLabel = UILabel(text: "App Section", font: .boldSystemFont(ofSize: 30))
     
     let horizontalController = AppsHorizontalController()
+}
+
+extension AppsGroupCell: Reusable {
 }

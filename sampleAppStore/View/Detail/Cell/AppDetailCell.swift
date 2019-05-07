@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class AppDetailCell: UICollectionViewCell {
     
@@ -59,4 +61,7 @@ class AppDetailCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension AppDetailCell: Reusable {
 }

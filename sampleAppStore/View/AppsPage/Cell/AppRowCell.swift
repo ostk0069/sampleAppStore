@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class AppRowCell: UICollectionViewCell {
     
@@ -42,4 +44,7 @@ class AppRowCell: UICollectionViewCell {
     let nameLabel = UILabel(text: "APP Name", font: .boldSystemFont(ofSize: 20))
     let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
     let getButton = UIButton(title: "GET")
+}
+
+extension AppRowCell: Reusable {
 }

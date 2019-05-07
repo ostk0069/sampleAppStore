@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class SearchResultCell: UICollectionViewCell {
     
@@ -107,4 +109,7 @@ class SearchResultCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
+}
+
+extension SearchResultCell: Reusable {
 }

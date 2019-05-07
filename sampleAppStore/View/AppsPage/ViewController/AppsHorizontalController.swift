@@ -18,11 +18,8 @@ class AppsHorizontalController: HorizontalSnappingController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: "AppRowCell")
+        collectionView.register(type: AppRowCell.self)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
-        
-//        this does not work because of layout
-//        collectionView.isPagingEnabled = true
     }
 }
 
@@ -36,7 +33,7 @@ extension AppsHorizontalController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppRowCell", for: indexPath) as! AppRowCell
+        let cell = AppRowCell.dequeue(from: collectionView, for: indexPath)
         let app = appGroup?.feed.results[indexPath.item]
         cell.nameLabel.text = app?.name
         cell.companyLabel.text = app?.artistName

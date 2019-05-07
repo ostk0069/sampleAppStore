@@ -19,7 +19,7 @@ class ReviewsController: HorizontalSnappingController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        collectionView.register(ReviewCell.self, forCellWithReuseIdentifier: "ReviewCell")
+        collectionView.register(type: ReviewCell.self)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
@@ -34,7 +34,7 @@ extension ReviewsController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
+        let cell = ReviewCell.dequeue(from: collectionView, for: indexPath)
         let entry = reviews?.feed.entry[indexPath.item]
         cell.titleLabel.text = entry?.title.label
         cell.autherLabel.text = entry?.author.name.label

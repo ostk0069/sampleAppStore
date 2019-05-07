@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class ScreenshotCell: UICollectionViewCell {
     
@@ -21,4 +23,7 @@ class ScreenshotCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension ScreenshotCell: Reusable {
 }

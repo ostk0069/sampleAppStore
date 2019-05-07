@@ -62,3 +62,6 @@ class TodayCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension TodayCell: Reusable {
+}

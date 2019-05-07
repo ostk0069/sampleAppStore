@@ -26,8 +26,7 @@ class AppsSearchController: BaseListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
-        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: "SearchResultCell")
-        
+        collectionView.register(type: SearchResultCell.self)
         collectionView.addSubview(enterSearchTermLabel)
         enterSearchTermLabel.fillSuperview(padding: .init(top: 100, left: 50, bottom: 0, right: 50))
     }
@@ -90,7 +89,7 @@ extension AppsSearchController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
         UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
+            let cell = SearchResultCell.dequeue(from: collectionView, for: indexPath)
             cell.appResult = appResults[indexPath.item]
             return cell
     }

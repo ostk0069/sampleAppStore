@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Instantiate
+import InstantiateStandard
 
 class ReviewCell: UICollectionViewCell {
     
@@ -51,4 +53,7 @@ class ReviewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension ReviewCell: Reusable {
 }
