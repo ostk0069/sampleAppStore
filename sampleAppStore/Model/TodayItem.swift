@@ -20,4 +20,6 @@ struct TodayItem {
     enum CellType: String {
         case single, multiple
     }
+    
+    var apps: [FeedResult]
 }

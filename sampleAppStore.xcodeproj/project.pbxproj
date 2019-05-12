@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		82347A1F2287DF3400FDDD43 /* TodayMultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A1E2287DF3400FDDD43 /* TodayMultipleAppCell.swift */; };
 		82347A212287E90B00FDDD43 /* BaseTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A202287E90B00FDDD43 /* BaseTodayCell.swift */; };
+		82347A232287EB9B00FDDD43 /* TodayMultipleAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A222287EB9B00FDDD43 /* TodayMultipleAppsController.swift */; };
+		82347A252287EC0D00FDDD43 /* MultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A242287EC0D00FDDD43 /* MultipleAppCell.swift */; };
 		82655120227FC6A300E5623F /* Instantiate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265511F227FC6A300E5623F /* Instantiate.framework */; };
 		82655122227FC6C800E5623F /* InstantiateStandard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82655121227FC6C800E5623F /* InstantiateStandard.framework */; };
 		82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DEA227DA347003D19F8 /* SearchResult.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		82347A1E2287DF3400FDDD43 /* TodayMultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppCell.swift; sourceTree = "<group>"; };
 		82347A202287E90B00FDDD43 /* BaseTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTodayCell.swift; sourceTree = "<group>"; };
+		82347A222287EB9B00FDDD43 /* TodayMultipleAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppsController.swift; sourceTree = "<group>"; };
+		82347A242287EC0D00FDDD43 /* MultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppCell.swift; sourceTree = "<group>"; };
 		8265511F227FC6A300E5623F /* Instantiate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instantiate.framework; path = Carthage/Build/iOS/Instantiate.framework; sourceTree = "<group>"; };
 		82655121227FC6C800E5623F /* InstantiateStandard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstantiateStandard.framework; path = Carthage/Build/iOS/InstantiateStandard.framework; sourceTree = "<group>"; };
 		82678DEA227DA347003D19F8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				82FEE12022809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift */,
 				82FEE1232280AE8D00D5F6E4 /* AppFullscreenHeaderCell.swift */,
 				82347A1E2287DF3400FDDD43 /* TodayMultipleAppCell.swift */,
+				82347A242287EC0D00FDDD43 /* MultipleAppCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 			children = (
 				8275D5C2227F5220008A0816 /* TodayController.swift */,
 				82FEE11E22809BFA00D5F6E4 /* AppFullscreenController.swift */,
+				82347A222287EB9B00FDDD43 /* TodayMultipleAppsController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				8275D5A7227EDE49008A0816 /* BetterSnappingLayout.swift in Sources */,
 				8275D594227EA88A008A0816 /* AppsPageHeaderHorizontalController.swift in Sources */,
 				8275D5A5227ED934008A0816 /* SnappingLayout.swift in Sources */,
+				82347A232287EB9B00FDDD43 /* TodayMultipleAppsController.swift in Sources */,
 				8275D585227E931D008A0816 /* AppsGroupCell.swift in Sources */,
 				82678DEE227DA6E6003D19F8 /* Service.swift in Sources */,
 				82FEE11F22809BFA00D5F6E4 /* AppFullscreenController.swift in Sources */,
@@ -501,6 +508,7 @@
 				8275D58B227E9D36008A0816 /* AppRowCell.swift in Sources */,
 				82FEE12122809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift in Sources */,
 				82347A1F2287DF3400FDDD43 /* TodayMultipleAppCell.swift in Sources */,
+				82347A252287EC0D00FDDD43 /* MultipleAppCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

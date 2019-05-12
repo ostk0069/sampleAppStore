@@ -10,12 +10,23 @@ import UIKit
 
 class TodayController: BaseListController {
     
-    let items = ItemSection.shared.items
+    var items = [TodayItem]()
+    var activityIndicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .whiteLarge)
+        view.color = .darkGray
+        view.startAnimating()
+        view.hidesWhenStopped = true
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(type: TodayCell.self)
         collectionView.register(type: TodayMultipleAppCell.self)
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerInSuperview()
+        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +81,32 @@ class TodayController: BaseListController {
             self.appFullscreenController?.removeFromParent()
             self.collectionView.isUserInteractionEnabled = true
         })
+    }
+    
+    private func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        var topGrossingGroup: AppGroup?
+        var topGamesGroup: AppGroup?
+        
+        dispatchGroup.enter()
+        Service.shared.fetchTopGrossing { (appGroup, error) in
+            topGrossingGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        Service.shared.fetchGames { (appGroup, error) in
+            topGamesGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            self.activityIndicatorView.stopAnimating()
+            ItemSection.shared.items[0].apps = topGrossingGroup?.feed.results ?? []
+            ItemSection.shared.items[2].apps = topGamesGroup?.feed.results ?? []
+            self.items = ItemSection.shared.items
+            self.collectionView.reloadData()
+        }
     }
 }
 
