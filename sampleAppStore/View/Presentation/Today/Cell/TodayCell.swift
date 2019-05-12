@@ -30,10 +30,9 @@ class TodayCell: BaseTodayCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
-        layer.cornerRadius = 16
         
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         let imageContainerView = UIView()
         imageContainerView.addSubview(imageView)
