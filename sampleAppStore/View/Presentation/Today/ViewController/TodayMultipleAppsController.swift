@@ -10,7 +10,7 @@ import UIKit
 
 class TodayMultipleAppsController: BaseListController {
     
-    var results = [FeedResult]()
+    var apps = [FeedResult]()
     private let mode: Mode
     override var prefersStatusBarHidden: Bool { return true }
     
@@ -40,7 +40,16 @@ class TodayMultipleAppsController: BaseListController {
             collectionView.isScrollEnabled = false
         }
         collectionView.register(type: MultipleAppCell.self)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @objc func handleDismiss() {
@@ -68,16 +77,22 @@ class TodayMultipleAppsController: BaseListController {
 extension TodayMultipleAppsController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if mode == .fullscreen {
-            return results.count
+            return apps.count
         } else {
-            return min(4, results.count)
+            return min(4, apps.count)
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = results[indexPath.item]
+        let item = apps[indexPath.item]
         let cell = MultipleAppCell.dequeue(from: collectionView, for: indexPath, with: item)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = self.apps[indexPath.item].id
+        let appDetailController = AppDetailController(appId: appId)
+        navigationController?.pushViewController(appDetailController, animated: true)
     }
 }
 

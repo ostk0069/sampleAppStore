@@ -133,8 +133,8 @@ extension TodayController {
         
         if items[indexPath.item].cellType == .multiple {
             let fullController = TodayMultipleAppsController(mode: .fullscreen)
-            fullController.results = self.items[indexPath.item].apps
-            present(fullController, animated: true)
+            fullController.apps = self.items[indexPath.item].apps
+            present(BackEnableNavigationController(rootViewController: fullController), animated: true)
             return
         }
         
