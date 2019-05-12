@@ -22,15 +22,19 @@ class BaseTodayCell: UICollectionViewCell {
     
     override var isHighlighted: Bool {
         didSet {
+            var transform: CGAffineTransform = .identity
             if isHighlighted {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                    self.transform = .init(scaleX: 0.9, y: 0.9)
-                })
-            } else {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                    self.transform = .identity
-                })
+                    transform = .init(scaleX: 0.9, y: 0.9)
             }
+            UIView.animate(
+                withDuration: 0.5,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: 1,
+                options: .curveEaseOut,
+                animations: {
+                    self.transform = transform
+            })
         }
     }
     
