@@ -14,6 +14,15 @@ class ItemSection {
     var items = [
         TodayItem(
             category: "THE DAILY LIST",
+            title: "Editor's Choice Games",
+            image: #imageLiteral(resourceName: "garden"),
+            description: "Test-Drive These CarPlay Apps",
+            backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            cellType: .single,
+            apps: []
+        ),
+        TodayItem(
+            category: "THE DAILY LIST",
             title: "Test-Drive These CarPlay Apps",
             image: #imageLiteral(resourceName: "garden"),
             description: "",

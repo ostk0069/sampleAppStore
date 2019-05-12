@@ -107,8 +107,8 @@ class TodayController: BaseListController {
         
         dispatchGroup.notify(queue: .main) {
             self.activityIndicatorView.stopAnimating()
-            ItemSection.shared.items[0].apps = topGrossingGroup?.feed.results ?? []
-            ItemSection.shared.items[2].apps = topGamesGroup?.feed.results ?? []
+            ItemSection.shared.items[1].apps = topGrossingGroup?.feed.results ?? []
+            ItemSection.shared.items[3].apps = topGamesGroup?.feed.results ?? []
             self.items = ItemSection.shared.items
             self.collectionView.reloadData()
         }
