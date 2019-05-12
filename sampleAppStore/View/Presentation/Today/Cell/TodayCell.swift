@@ -10,11 +10,11 @@ import UIKit
 import Instantiate
 import InstantiateStandard
 
-class TodayCell: UICollectionViewCell {
+class TodayCell: BaseTodayCell {
     
     var topConstraint: NSLayoutConstraint?
     
-    var todayItem: TodayItem! {
+    override var todayItem: TodayItem! {
         didSet {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
@@ -64,4 +64,9 @@ class TodayCell: UICollectionViewCell {
 }
 
 extension TodayCell: Reusable {
+    typealias Dependency = TodayItem
+    
+    func inject(_ dependency: Dependency) {
+        self.todayItem = dependency
+    }
 }

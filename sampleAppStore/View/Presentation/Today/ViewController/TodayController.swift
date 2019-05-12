@@ -15,6 +15,7 @@ class TodayController: BaseListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(type: TodayCell.self)
+        collectionView.register(type: TodayMultipleAppCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +30,7 @@ class TodayController: BaseListController {
     
     var startingFrame: CGRect?
     var appFullscreenController: AppFullscreenController?
+    static let cellSize: CGFloat = 500
     
     private var topConstraint: NSLayoutConstraint?
     private var leadingConstraint: NSLayoutConstraint?
@@ -78,9 +80,15 @@ extension TodayController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = TodayCell.dequeue(from: collectionView, for: indexPath)
-        cell.todayItem = items[indexPath.item]
-        return cell
+        let item = items[indexPath.item]
+        switch item.cellType{
+        case .single:
+            let cell = TodayCell.dequeue(from: collectionView, for: indexPath, with: item)
+            return cell
+        case .multiple:
+            let cell = TodayMultipleAppCell.dequeue(from: collectionView, for: indexPath, with: item)
+            return cell
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -143,7 +151,7 @@ extension TodayController {
 extension TodayController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 64, height: 450)
+        return .init(width: view.frame.width - 64, height: TodayController.cellSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
