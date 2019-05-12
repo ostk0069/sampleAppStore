@@ -11,6 +11,7 @@
 		82347A212287E90B00FDDD43 /* BaseTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A202287E90B00FDDD43 /* BaseTodayCell.swift */; };
 		82347A232287EB9B00FDDD43 /* TodayMultipleAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A222287EB9B00FDDD43 /* TodayMultipleAppsController.swift */; };
 		82347A252287EC0D00FDDD43 /* MultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A242287EC0D00FDDD43 /* MultipleAppCell.swift */; };
+		82347A272288014600FDDD43 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82347A262288014600FDDD43 /* Mode.swift */; };
 		82655120227FC6A300E5623F /* Instantiate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265511F227FC6A300E5623F /* Instantiate.framework */; };
 		82655122227FC6C800E5623F /* InstantiateStandard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82655121227FC6C800E5623F /* InstantiateStandard.framework */; };
 		82678DEB227DA347003D19F8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82678DEA227DA347003D19F8 /* SearchResult.swift */; };
@@ -66,6 +67,7 @@
 		82347A202287E90B00FDDD43 /* BaseTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTodayCell.swift; sourceTree = "<group>"; };
 		82347A222287EB9B00FDDD43 /* TodayMultipleAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppsController.swift; sourceTree = "<group>"; };
 		82347A242287EC0D00FDDD43 /* MultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppCell.swift; sourceTree = "<group>"; };
+		82347A262288014600FDDD43 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		8265511F227FC6A300E5623F /* Instantiate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instantiate.framework; path = Carthage/Build/iOS/Instantiate.framework; sourceTree = "<group>"; };
 		82655121227FC6C800E5623F /* InstantiateStandard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstantiateStandard.framework; path = Carthage/Build/iOS/InstantiateStandard.framework; sourceTree = "<group>"; };
 		82678DEA227DA347003D19F8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				8275D5C4227F5292008A0816 /* Cell */,
 				82FEE1272280BB4200D5F6E4 /* ItemSection.swift */,
 				82347A202287E90B00FDDD43 /* BaseTodayCell.swift */,
+				82347A262288014600FDDD43 /* Mode.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				8275D5B0227EF13A008A0816 /* UIStackView+.swift in Sources */,
 				8275D58F227E9F3D008A0816 /* UIButton+.swift in Sources */,
 				82678DF4227E8F8C003D19F8 /* AppsPageController.swift in Sources */,
+				82347A272288014600FDDD43 /* Mode.swift in Sources */,
 				82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */,
 				82678DF6227E909C003D19F8 /* BaseListController.swift in Sources */,
 				8275D58D227E9EB0008A0816 /* UIImageView+.swift in Sources */,
