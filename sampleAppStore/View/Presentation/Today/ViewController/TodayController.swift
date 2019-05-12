@@ -109,6 +109,24 @@ class TodayController: BaseListController {
             self.collectionView.reloadData()
         }
     }
+    
+    @objc private func handleMultipleAppsTap(gesture: UITapGestureRecognizer) {
+        let collectionView = gesture.view
+        
+        var superview = collectionView?.superview
+        while superview != nil {
+            if let cell = superview as? TodayMultipleAppCell {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else {
+                    return
+                }
+                let fullController = TodayMultipleAppsController(mode: .fullscreen)
+                fullController.apps = self.items[indexPath.item].apps
+                present(fullController, animated: true)
+                return
+            }
+            superview = superview?.superview
+        }
+    }
 }
 
 extension TodayController {
@@ -125,6 +143,7 @@ extension TodayController {
             return cell
         case .multiple:
             let cell = TodayMultipleAppCell.dequeue(from: collectionView, for: indexPath, with: item)
+            cell.multipleAppsController.collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMultipleAppsTap)))
             return cell
         }
     }
