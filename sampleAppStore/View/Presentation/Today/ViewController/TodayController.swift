@@ -11,6 +11,11 @@ import UIKit
 class TodayController: BaseListController {
     
     var items = [TodayItem]()
+    var startingFrame: CGRect?
+    var appFullscreenController: AppFullscreenController!
+    var anchoredConstraint: AnchoredConstraints?
+    static let cellSize: CGFloat = 500
+    
     var activityIndicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .whiteLarge)
         view.color = .darkGray
@@ -40,15 +45,6 @@ class TodayController: BaseListController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    var startingFrame: CGRect?
-    var appFullscreenController: AppFullscreenController?
-    static let cellSize: CGFloat = 500
-    
-    private var topConstraint: NSLayoutConstraint?
-    private var leadingConstraint: NSLayoutConstraint?
-    private var widthConstraint: NSLayoutConstraint?
-    private var heightConstraint: NSLayoutConstraint?
-
     @objc func handleRemoveRedView() {
         UIView.animate(
             withDuration: 0.7,
@@ -63,10 +59,10 @@ class TodayController: BaseListController {
                 guard let startingFrame = self.startingFrame else {
                     return
                 }
-                self.topConstraint?.constant = startingFrame.origin.y
-                self.leadingConstraint?.constant = startingFrame.origin.x
-                self.widthConstraint?.constant = startingFrame.width
-                self.heightConstraint?.constant = startingFrame.height
+                self.anchoredConstraint?.top?.constant = startingFrame.origin.y
+                self.anchoredConstraint?.leading?.constant = startingFrame.origin.x
+                self.anchoredConstraint?.width?.constant = startingFrame.width
+                self.anchoredConstraint?.height?.constant = startingFrame.height
                 self.view.layoutIfNeeded()
                 
                 self.tabBarController?.tabBar.transform = .identity
@@ -127,6 +123,91 @@ class TodayController: BaseListController {
             superview = superview?.superview
         }
     }
+    
+    private func showAppListCard(for indexPath: IndexPath) {
+        let fullController = TodayMultipleAppsController(mode: .fullscreen)
+        fullController.apps = self.items[indexPath.item].apps
+        present(BackEnableNavigationController(rootViewController: fullController), animated: true)
+    }
+    
+    private func setupSingleFullscreenController(for indexPath: IndexPath) {
+        let appFullscreenController = AppFullscreenController()
+        appFullscreenController.todayItem = items[indexPath.row]
+        appFullscreenController.dismissHandler = {
+            self.handleRemoveRedView()
+        }
+        appFullscreenController.view.layer.cornerRadius = 16
+        self.appFullscreenController = appFullscreenController
+    }
+    
+    private func startingCellFrame(for indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            return
+        }
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else {
+            return
+        }
+        self.startingFrame = startingFrame
+    }
+    
+    private func cardStartingPosition(for indexPath: IndexPath) {
+        let fullscreenView = appFullscreenController.view!
+        view.addSubview(fullscreenView)
+        addChild(appFullscreenController)
+        
+        self.collectionView.isUserInteractionEnabled = false
+        
+        startingCellFrame(for: indexPath)
+        guard let startingFrame = self.startingFrame else {
+            return
+        }
+        
+        self.anchoredConstraint = fullscreenView.anchor(
+            top: view.topAnchor,
+            leading: view.leadingAnchor,
+            bottom: nil,
+            trailing: nil,
+            padding: .init(
+                top: startingFrame.origin.y,
+                left: startingFrame.origin.x,
+                bottom: 0,
+                right: 0
+            ),
+            size: .init(
+                width: startingFrame.width,
+                height: startingFrame.height
+            )
+        )
+        self.view.layoutIfNeeded()
+    }
+    
+    private func cardPopupAnimation() {
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.7,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.anchoredConstraint?.top?.constant = 0
+                        self.anchoredConstraint?.leading?.constant = 0
+                        self.anchoredConstraint?.width?.constant = self.view.frame.width
+                        self.anchoredConstraint?.height?.constant = self.view.frame.height
+                        self.view.layoutIfNeeded()
+                        self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+                        
+                        guard let cell = self.appFullscreenController?.tableView.cellForRow(at: [0,0]) as? AppFullscreenHeaderCell else {
+                            return
+                        }
+                        cell.todayCell.topConstraint?.constant = 48
+                        cell.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    private func showSingleAppCard(for indexPath: IndexPath) {
+        setupSingleFullscreenController(for: indexPath)
+        cardStartingPosition(for: indexPath)
+        cardPopupAnimation()
+    }
 }
 
 extension TodayController {
@@ -149,66 +230,13 @@ extension TodayController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if items[indexPath.item].cellType == .multiple {
-            let fullController = TodayMultipleAppsController(mode: .fullscreen)
-            fullController.apps = self.items[indexPath.item].apps
-            present(BackEnableNavigationController(rootViewController: fullController), animated: true)
-            return
+        let item = items[indexPath.item]
+        switch item.cellType {
+        case .multiple:
+            showAppListCard(for: indexPath)
+        case .single:
+            showSingleAppCard(for: indexPath)
         }
-        
-        let appFullscreenController = AppFullscreenController()
-        appFullscreenController.todayItem = items[indexPath.row]
-        appFullscreenController.dismissHandler = {
-            self.handleRemoveRedView()
-        }
-        let fullscreenView = appFullscreenController.view!
-        view.addSubview(fullscreenView)
-        addChild(appFullscreenController)
-        
-        self.appFullscreenController = appFullscreenController
-        self.collectionView.isUserInteractionEnabled = false
-        
-        guard let cell = collectionView.cellForItem(at: indexPath) else {
-            return
-        }
-        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else {
-            return
-        }
-        self.startingFrame = startingFrame
-        fullscreenView.frame = startingFrame
-        
-        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
-        
-        topConstraint = fullscreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
-        leadingConstraint = fullscreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
-        widthConstraint = fullscreenView.widthAnchor.constraint(equalToConstant: startingFrame.width)
-        heightConstraint = fullscreenView.heightAnchor.constraint(equalToConstant: startingFrame.height)
-        
-        [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach({$0?.isActive = true})
-        self.view.layoutIfNeeded()
-        
-        fullscreenView.layer.cornerRadius = 16
-        
-        UIView.animate(withDuration: 0.7,
-                       delay: 0,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.7,
-                       options: .curveEaseOut,
-                       animations: {
-                        self.topConstraint?.constant = 0
-                        self.leadingConstraint?.constant = 0
-                        self.widthConstraint?.constant = self.view.frame.width
-                        self.heightConstraint?.constant = self.view.frame.height
-                        self.view.layoutIfNeeded()
-                        self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-                        
-                        guard let cell = self.appFullscreenController?.tableView.cellForRow(at: [0,0]) as? AppFullscreenHeaderCell else {
-                            return
-                        }
-                        cell.todayCell.topConstraint?.constant = 48
-                        cell.layoutIfNeeded()
-        }, completion: nil)
     }
 }
 
