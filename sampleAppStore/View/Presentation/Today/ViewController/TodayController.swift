@@ -121,7 +121,7 @@ class TodayController: BaseListController {
                 }
                 let fullController = TodayMultipleAppsController(mode: .fullscreen)
                 fullController.apps = self.items[indexPath.item].apps
-                present(fullController, animated: true)
+                present(BackEnableNavigationController(rootViewController: fullController), animated: true)
                 return
             }
             superview = superview?.superview
