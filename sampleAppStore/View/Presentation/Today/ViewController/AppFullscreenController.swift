@@ -64,6 +64,14 @@ class AppFullscreenController: UIViewController {
         closeButton.addTarget(self, action: #selector(handlerDismiss), for: .touchUpInside)
     }
     
+    @objc private func handlerDismiss(button: UIButton) {
+        button.isHidden = true
+        dismissHandler?()
+    }
+}
+
+extension AppFullscreenController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -81,24 +89,15 @@ class AppFullscreenController: UIViewController {
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return TodayController.cellSize
-        }
-        return UITableView.automaticDimension
-    }
-    
-    @objc private func handlerDismiss(button: UIButton) {
-        button.isHidden = true
-        dismissHandler?()
-    }
-}
-
-extension AppFullscreenController: UITableViewDataSource {
-    
 }
 
 extension AppFullscreenController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return TodayController.cellSize
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
 }
