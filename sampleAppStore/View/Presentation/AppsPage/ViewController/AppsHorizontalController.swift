@@ -26,9 +26,7 @@ class AppsHorizontalController: HorizontalSnappingController {
 extension AppsHorizontalController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = appGroup?.feed.results.count else {
-            return 0
-        }
+        let count = appGroup?.feed.results.count ?? 0
         return count
     }
     

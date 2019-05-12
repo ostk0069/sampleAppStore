@@ -69,10 +69,7 @@ class AppsPageController: BaseListController {
                 print("failed to fetch social app from LBTA:", error)
                 return
             }
-            guard let apps = apps else {
-                return
-            }
-            self.socialApps = apps
+            self.socialApps = apps ?? []
         }
         
         dispatchGroup.notify(queue: .main) {

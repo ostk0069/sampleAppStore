@@ -26,9 +26,7 @@ class PreviewScreenshotsController: HorizontalSnappingController {
 extension PreviewScreenshotsController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = app?.screenshotUrls.count else {
-            return 0
-        }
+        let count = app?.screenshotUrls.count ?? 0
         return count
     }
     

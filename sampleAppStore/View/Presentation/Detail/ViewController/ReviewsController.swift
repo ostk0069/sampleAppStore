@@ -27,15 +27,13 @@ class ReviewsController: HorizontalSnappingController {
 extension ReviewsController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = reviews?.feed.entry.count else {
-            return 0
-        }
+        let count = reviews?.feed.entry?.count ?? 0
         return count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ReviewCell.dequeue(from: collectionView, for: indexPath)
-        let entry = reviews?.feed.entry[indexPath.item]
+        let entry = reviews?.feed.entry?[indexPath.item]
         cell.titleLabel.text = entry?.title.label
         cell.autherLabel.text = entry?.author.name.label
         cell.bodyLabel.text = entry?.content.label
