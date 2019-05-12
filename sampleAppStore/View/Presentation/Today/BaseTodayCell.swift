@@ -15,9 +15,16 @@ class BaseTodayCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 16
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 10
-        layer.shadowOffset = .init(width: 0, height: 10)
+        self.backgroundView = UIView()
+        addSubview(self.backgroundView!)
+        self.backgroundView?.fillSuperview()
+        
+        self.backgroundView?.backgroundColor = .white
+        self.backgroundView?.layer.cornerRadius = 16
+        self.backgroundView?.layer.shadowOpacity = 0.2
+        self.backgroundView?.layer.shadowRadius = 10
+        self.backgroundView?.layer.shadowOffset = .init(width: 0, height: 10)
+        self.backgroundView?.layer.shouldRasterize = true
     }
     
     override var isHighlighted: Bool {
