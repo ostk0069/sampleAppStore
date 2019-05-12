@@ -124,6 +124,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82347A1D2287DE0B00FDDD43 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8275D598227EB0AA008A0816 /* AppsPage */,
+				8275D599227EB0B9008A0816 /* AppsSearch */,
+				8275D5A9227EE76E008A0816 /* Detail */,
+				8275D5C1227F520A008A0816 /* Today */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		82678DEC227DA6D3003D19F8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,12 +165,9 @@
 		8275D597227EB07D008A0816 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8275D5C1227F520A008A0816 /* Today */,
-				8275D5A9227EE76E008A0816 /* Detail */,
-				8275D5A8227EE1B4008A0816 /* Helper */,
 				82F31C9B227D77FB00E17BFD /* BaseTabBarController.swift */,
-				8275D599227EB0B9008A0816 /* AppsSearch */,
-				8275D598227EB0AA008A0816 /* AppsPage */,
+				8275D5A8227EE1B4008A0816 /* Helper */,
+				82347A1D2287DE0B00FDDD43 /* Presentation */,
 			);
 			path = View;
 			sourceTree = "<group>";
