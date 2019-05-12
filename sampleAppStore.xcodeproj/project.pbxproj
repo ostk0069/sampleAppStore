@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8275D598227EB0AA008A0816 /* AppsPage */,
-				8275D599227EB0B9008A0816 /* AppsSearch */,
+				8275D599227EB0B9008A0816 /* Search */,
 				8275D5A9227EE76E008A0816 /* Detail */,
 				8275D5C1227F520A008A0816 /* Today */,
 			);
@@ -182,13 +182,13 @@
 			path = AppsPage;
 			sourceTree = "<group>";
 		};
-		8275D599227EB0B9008A0816 /* AppsSearch */ = {
+		8275D599227EB0B9008A0816 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				8275D59B227EB0F9008A0816 /* ViewController */,
 				8275D59A227EB0DF008A0816 /* Cell */,
 			);
-			path = AppsSearch;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		8275D59A227EB0DF008A0816 /* Cell */ = {
