@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SDWebImage'
-  s.version = '5.0.2'
+  s.version = '5.0.3'
 
   s.osx.deployment_target = '10.10'
   s.ios.deployment_target = '8.0'
@@ -31,7 +31,6 @@ Pod::Spec.new do |s|
     core.source_files = 'SDWebImage/*.{h,m}', 'WebImage/SDWebImage.h', 'SDWebImage/Private/*.{h,m}'
     core.exclude_files = 'SDWebImage/MapKit/*.{h,m}'
     core.private_header_files = 'SDWebImage/Private/*.h'
-    core.prefix_header_contents = '#import "SDInternalMacros.h"'
   end
 
   s.subspec 'MapKit' do |mk|
