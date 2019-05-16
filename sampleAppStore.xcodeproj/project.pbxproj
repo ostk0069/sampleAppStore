@@ -50,6 +50,7 @@
 		82A18FC7227D8B37007BC7FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */; };
 		82A18FCA227D9388007BC7FD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FC9227D9388007BC7FD /* UIView+.swift */; };
 		82A18FCC227D97E8007BC7FD /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */; };
+		82F0C7CF228D702600CFA205 /* GetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0C7CE228D702600CFA205 /* GetButton.swift */; };
 		82F31C8A227D73E500E17BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31C89227D73E500E17BFD /* AppDelegate.swift */; };
 		82F31C8F227D73E500E17BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C8D227D73E500E17BFD /* Main.storyboard */; };
 		82F31C91227D73E600E17BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F31C90227D73E600E17BFD /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		82A18FC6227D8B37007BC7FD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		82A18FC9227D9388007BC7FD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		82A18FCB227D97E8007BC7FD /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		82F0C7CE228D702600CFA205 /* GetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetButton.swift; sourceTree = "<group>"; };
 		82F31C86227D73E500E17BFD /* sampleAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F31C89227D73E500E17BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F31C8E227D73E500E17BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				82678DF5227E909C003D19F8 /* BaseListController.swift */,
 				8275D5A4227ED934008A0816 /* SnappingLayout.swift */,
 				82347A2822880C7000FDDD43 /* BackEnableNavigationController.swift */,
+				82F0C7CE228D702600CFA205 /* GetButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				8275D5B5227F30A0008A0816 /* PreviewScreenshotsController.swift in Sources */,
 				8275D58B227E9D36008A0816 /* AppRowCell.swift in Sources */,
 				82FEE12122809E4C00D5F6E4 /* AppFullscreenDescriptionCell.swift in Sources */,
+				82F0C7CF228D702600CFA205 /* GetButton.swift in Sources */,
 				82347A1F2287DF3400FDDD43 /* TodayMultipleAppCell.swift in Sources */,
 				82347A252287EC0D00FDDD43 /* MultipleAppCell.swift in Sources */,
 			);

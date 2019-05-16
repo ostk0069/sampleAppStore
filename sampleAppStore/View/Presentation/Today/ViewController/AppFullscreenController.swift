@@ -78,21 +78,13 @@ class AppFullscreenController: UIViewController {
         imageView.constrainWidth(constant: 78)
         imageView.constrainHeight(constant: 78)
         
-        let getButton = UIButton(title: "GET")
-        getButton.setTitleColor(.white, for: .normal)
-        getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        getButton.backgroundColor = .darkGray
-        getButton.layer.cornerRadius = 16
-        getButton.constrainHeight(constant: 32)
-        getButton.constrainWidth(constant: 80)
-        
         let stackView = UIStackView(arrangedSubviews: [
             imageView,
             VerticalStackView(arrangedSubviews: [
                 UILabel(text: "Life Hack", font: .boldSystemFont(ofSize: 18)),
                 UILabel(text: "Utilizing Your Time", font: .systemFont(ofSize: 14))
                 ], spacing: 4),
-            getButton
+            GetButton()
             ], customSpacing: 16)
         floatingContainerView.addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 0, left: 16, bottom: 0, right: 16))

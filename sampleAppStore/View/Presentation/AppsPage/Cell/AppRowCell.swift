@@ -18,15 +18,10 @@ class AppRowCell: UICollectionViewCell {
         imageView.constrainWidth(constant: 64)
         imageView.constrainHeight(constant: 64)
         
-        getButton.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9390758872, green: 0.9392114282, blue: 0.970784843, alpha: 1))
-        getButton.constrainHeight(constant: 32)
-        getButton.constrainWidth(constant: 80)
-        getButton.layer.cornerRadius = 32 / 2
-        
         let stackView = UIStackView(arrangedSubviews: [
             imageView,
             VerticalStackView(arrangedSubviews: [nameLabel, companyLabel], spacing: 2),
-            getButton
+            GetButton()
             ]
         )
         stackView.spacing = 16
@@ -43,7 +38,6 @@ class AppRowCell: UICollectionViewCell {
     let imageView = UIImageView(cornerRadius: 8)
     let nameLabel = UILabel(text: "APP Name", font: .boldSystemFont(ofSize: 20))
     let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
-    let getButton = UIButton(title: "GET")
 }
 
 extension AppRowCell: Reusable {

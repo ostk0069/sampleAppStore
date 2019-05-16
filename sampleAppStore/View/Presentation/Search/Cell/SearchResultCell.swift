@@ -37,7 +37,7 @@ class SearchResultCell: UICollectionViewCell {
         let infoTopStackView = UIStackView(arrangedSubviews: [
             appIconImageView,
             VerticalStackView(arrangedSubviews: [nameLabel, categoryLabel, ratingsLabel]),
-            getButton
+            GetButton()
             ]
         )
         infoTopStackView.spacing = 12
@@ -82,18 +82,6 @@ class SearchResultCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "4.5M"
         return label
-    }()
-    
-    let getButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("GET", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        button.layer.cornerRadius = 16
-        return button
     }()
     
     lazy var screenShotImageView1 = createScreenShotImageView()
