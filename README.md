@@ -29,3 +29,8 @@ xcode version: `10.2`
 
 - RSS Generator
   - https://rss.itunes.apple.com/ja-jp
+
+## Purpose
+- know how Today lists UI works in AppStore
+- get use to creating UI only with codes
+- know how search engine work with iOS
