@@ -2,6 +2,8 @@
 
 sample app which looks like App Store
 
+![alt text](https://github.com/takumaosada/sampleAppStore/blob/master/screenshot_sample_app_store.png)
+
 ## Environment
 
 swift version: `5.0`
