@@ -1,0 +1,16 @@
+PODS:
+  - Instantiate (4.0.0)
+
+DEPENDENCIES:
+  - Instantiate
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Instantiate
+
+SPEC CHECKSUMS:
+  Instantiate: 62516e7dde448721c1f5815a9ee7e0669d034d52
+
+PODFILE CHECKSUM: de3c9bbcdb35006bc913b9884be01d8cd986074b
+
+COCOAPODS: 1.7.4

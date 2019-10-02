@@ -14,13 +14,6 @@
 static NSString *kTestImageKeyJPEG = @"TestImageKey.jpg";
 static NSString *kTestImageKeyPNG = @"TestImageKey.png";
 
-@interface SDImageCache ()
-
-@property (nonatomic, strong, nonnull) id<SDMemoryCache> memCache;
-@property (nonatomic, strong, nonnull) id<SDDiskCache> diskCache;
-
-@end
-
 @interface SDImageCacheTests : SDTestCase <NSFileManagerDelegate>
 
 @end
@@ -374,13 +367,37 @@ static NSString *kTestImageKeyPNG = @"TestImageKey.png";
     expect(fileManager.lastError).equal(targetError);
 }
 
+- (void)test41MatchAnimatedImageClassWorks {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"MatchAnimatedImageClass option should work"];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:self.testGIFPath];
+    
+    NSString *kAnimatedImageKey = @"kAnimatedImageKey";
+    
+    // Store UIImage into cache
+    [[SDImageCache sharedImageCache] storeImageToMemory:image forKey:kAnimatedImageKey];
+    
+    // `MatchAnimatedImageClass` will cause query failed because class does not match
+    [SDImageCache.sharedImageCache queryCacheOperationForKey:kAnimatedImageKey options:SDImageCacheMatchAnimatedImageClass context:@{SDWebImageContextAnimatedImageClass : SDAnimatedImage.class} done:^(UIImage * _Nullable image1, NSData * _Nullable data1, SDImageCacheType cacheType1) {
+        expect(image1).beNil();
+        // This should query success with UIImage
+        [SDImageCache.sharedImageCache queryCacheOperationForKey:kAnimatedImageKey options:0 context:@{SDWebImageContextAnimatedImageClass : SDAnimatedImage.class} done:^(UIImage * _Nullable image2, NSData * _Nullable data2, SDImageCacheType cacheType2) {
+            expect(image2).notTo.beNil();
+            expect(image2).equal(image);
+            
+            [expectation fulfill];
+        }];
+    }];
+    
+    [self waitForExpectationsWithCommonTimeout];
+}
+
 #pragma mark - SDMemoryCache & SDDiskCache
 - (void)test42CustomMemoryCache {
     SDImageCacheConfig *config = [[SDImageCacheConfig alloc] init];
     config.memoryCacheClass = [SDWebImageTestMemoryCache class];
     NSString *nameSpace = @"SDWebImageTestMemoryCache";
     SDImageCache *cache = [[SDImageCache alloc] initWithNamespace:nameSpace diskCacheDirectory:nil config:config];
-    SDWebImageTestMemoryCache *memCache = cache.memCache;
+    SDWebImageTestMemoryCache *memCache = cache.memoryCache;
     expect([memCache isKindOfClass:[SDWebImageTestMemoryCache class]]).to.beTruthy();
 }
 
